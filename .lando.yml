@@ -1,4 +1,4 @@
-name: api_projet_symfony
+name: tap_symfony
 recipe: symfony
 config:
   php: '8.1'
@@ -9,11 +9,11 @@ services:
     type: mysql
     portforward: 3307
     creds:
-      user: julien
+      user: admin
       password: admin
-      database: api_symfony
+      database: tap
   node:
-    type: node:14
+    type: node:16
     build:
       - yarn install
       - npm install
