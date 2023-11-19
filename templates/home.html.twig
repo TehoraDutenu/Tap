@@ -1,0 +1,23 @@
+
+{# - Récupérer la base - #}
+{% extends 'base.html.twig' %}
+
+{# - Titre de la page - #}
+{% block title %}
+    Les Domaines
+{% endblock %}
+
+{# - Corps - #}
+{% block body %}
+    <h2>{{ title }}</h2>
+
+    {% for domaine in domaines %}
+        <div class="card mb-2">
+            <div class="card-body">
+                <h4 class="card-title">{{ domaine.name }}</h4>
+                <p class="card-text">{{ domaine.description }}</p>
+            </div>
+        </div>
+        
+    {% endfor %}
+{% endblock %}

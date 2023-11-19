@@ -21,6 +21,11 @@ class DomaineRepository extends ServiceEntityRepository
         parent::__construct($registry, Domaine::class);
     }
 
+    public function findAll()   
+    {
+        
+    }
+
 //    /**
 //     * @return Domaine[] Returns an array of Domaine objects
 //     */
