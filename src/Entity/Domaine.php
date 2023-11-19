@@ -46,6 +46,12 @@ class Domaine
     #[ORM\ManyToMany(targetEntity: ActiviteDomaine::class, mappedBy: 'domaine')]
     private Collection $activiteDomaines;
 
+    #[ORM\Column]
+    private ?bool $has_public = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $has_reservation = null;
+
     public function __construct()
     {
         $this->activiteDomaines = new ArrayCollection();
@@ -192,6 +198,30 @@ class Domaine
         if ($this->activiteDomaines->removeElement($activiteDomaine)) {
             $activiteDomaine->removeDomaine($this);
         }
+
+        return $this;
+    }
+
+    public function isHasPublic(): ?bool
+    {
+        return $this->has_public;
+    }
+
+    public function setHasPublic(bool $has_public): static
+    {
+        $this->has_public = $has_public;
+
+        return $this;
+    }
+
+    public function isHasReservation(): ?bool
+    {
+        return $this->has_reservation;
+    }
+
+    public function setHasReservation(?bool $has_reservation): static
+    {
+        $this->has_reservation = $has_reservation;
 
         return $this;
     }
