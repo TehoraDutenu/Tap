@@ -14,6 +14,8 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Domaine[]    findAll()
  * @method Domaine[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
+
+
 class DomaineRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
@@ -21,10 +23,6 @@ class DomaineRepository extends ServiceEntityRepository
         parent::__construct($registry, Domaine::class);
     }
 
-    public function findAll()   
-    {
-        
-    }
 
 //    /**
 //     * @return Domaine[] Returns an array of Domaine objects
